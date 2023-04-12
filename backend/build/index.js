@@ -69,7 +69,11 @@ app.post("/login", (req, res) => __awaiter(void 0, void 0, void 0, function* () 
                 return res.send({
                     message: "User authenticated successfully",
                     // userToken: user.token,
-                    email: email,
+                    user: {
+                        email: user.email,
+                        id: user.id,
+                        name: user.name,
+                    },
                 });
             }
             else {
@@ -88,8 +92,8 @@ app.post("/login", (req, res) => __awaiter(void 0, void 0, void 0, function* () 
 const start = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         yield prisma.$connect();
-        yield app.listen({ port: 3000 });
-        console.log("Users API listening on port 3000!");
+        yield app.listen({ port: 4000 });
+        console.log("Users API listening on port 4000!");
     }
     catch (err) {
         console.error(err);

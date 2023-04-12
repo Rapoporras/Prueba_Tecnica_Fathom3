@@ -73,7 +73,11 @@ app.post<{ Body: { email: string; password: string } }>(
             return res.send({
               message: "User authenticated successfully",
               // userToken: user.token,
-              email: email,
+              user: {
+                email: user.email,
+                id: user.id,
+                name: user.name,
+              },
             });
           } else {
             return res.status(400).send({
@@ -92,8 +96,8 @@ app.post<{ Body: { email: string; password: string } }>(
 const start = async () => {
   try {
     await prisma.$connect();
-    await app.listen({ port: 3000 });
-    console.log("Users API listening on port 3000!");
+    await app.listen({ port: 4000 });
+    console.log("Users API listening on port 4000!");
   } catch (err) {
     console.error(err);
   }
