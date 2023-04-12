@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
-// import Logo from "../../../assets/logo.svg"
 import { doLogin } from "../../Api/Api";
 import { useAuth } from "../../Hooks/useContext";
 import { Footer } from "../../Component/Footer/Footer";
@@ -19,6 +18,9 @@ import {
   InputRightElement,
   Stack,
 } from "@chakra-ui/react";
+
+import Logo from "../../logo.svg";
+
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -42,7 +44,7 @@ function Login() {
       .catch((error) => {
         console.log("Error al iniciar sesión");
         setError(
-          "Ha ocurrido un error al iniciar sesión, inténtalo de nuevo" + error
+          "An error occurred while login the user. Please try again." + error
         );
         // setLoading(false);
       });
@@ -64,14 +66,13 @@ function Login() {
         pt={"25px"}
         style={{ textAlign: "center", height: "100vh", marginBottom: "15px" }}
       >
-        {/* <img
-        width="150px"
-        src={Logo}
-        alt="Logo"
-      /> */}
         <Card maxW={"500px"}>
           <CardBody>
             <Box>
+              <Box display={"flex"} justifyContent={"center"}>
+              <img width="150px" src={Logo} alt="Logo" />
+              </Box>
+             
               <Heading as="h3" size="lg" my={5}>
                 Login
               </Heading>
@@ -104,7 +105,13 @@ function Login() {
                   </Button>
                 </InputRightElement>
               </InputGroup>
-              <Stack direction="row" justifyContent={"center"} spacing={4} align="center" my={"15px"}>
+              <Stack
+                direction="row"
+                justifyContent={"center"}
+                spacing={4}
+                align="center"
+                my={"15px"}
+              >
                 <Button
                   w={"200px"}
                   bgColor={"#fdc500"}

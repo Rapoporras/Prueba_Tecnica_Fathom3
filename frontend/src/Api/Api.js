@@ -1,15 +1,11 @@
 import axios from "axios";
 
 export const Api = axios.create({
-  // baseURL: "https://lgfm-backend-proxy.de-c1.cloudhub.io",
-  // baseURL: "https://lgfm-backend-proxy-sandbox.de-c1.cloudhub.io",
   baseURL: "http://localhost:4000",
-  //   baseURL: "https://pre.delivery-platf.lgfm.app/",
 
   timeout: 3000,
   headers: {
     "Content-Type": "application/json",
-    // "Access-Control-Allow-Origin": "*",
   },
 });
 

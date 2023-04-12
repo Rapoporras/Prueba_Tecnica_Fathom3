@@ -20,6 +20,9 @@ import {
   Stack,
   TableContainer,
 } from "@chakra-ui/react";
+
+
+import Logo from "../../logo.svg";
 function SingIn() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -37,14 +40,14 @@ function SingIn() {
     createUser(name, email, password)
       .then((response) => {
         console.log(response);
-        login(response.data.email);
+        login(JSON.stringify(response.data.user));
         setError("");
         window.location.replace("/");
       })
       .catch((error) => {
         console.log("Error al iniciar sesión");
         setError(
-          "Ha ocurrido un error al crear usuario, inténtalo de nuevo" + error
+          "An error occurred while creating the user. Please try again." + error
         );
         // setLoading(false);
       });
@@ -66,14 +69,12 @@ function SingIn() {
         pt={"25px"}
         style={{ textAlign: "center", height: "100vh", marginBottom: "15px" }}
       >
-        {/* <img
-          width="150px"
-          src={Logo}
-          alt="Logo"
-        /> */}
         <Card maxW={"500px"}>
           <CardBody>
             <Box>
+              <Box display={"flex"} justifyContent={"center"}>
+                <img width="150px" src={Logo} alt="Logo" />
+              </Box>
               <Heading as="h3" size="lg" my={5}>
                 SingIn
               </Heading>

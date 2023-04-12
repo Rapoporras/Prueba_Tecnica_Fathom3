@@ -2,7 +2,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { Box, Button } from "@chakra-ui/react";
 import { useAuth } from "../../Hooks/useContext";
 import { useState } from "react";
-
+import  Logo from "../../logo.svg";
 export const Navbar = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
@@ -29,12 +29,8 @@ export const Navbar = () => {
           padding: "10px",
         }}
       >
-        {/* <img
-      width="50px"
-      src={Logo}
-      alt="Logo"
-    /> */}
-        <Box>
+        <img width="50px" src={Logo} alt="Logo" />
+        <Box ml={"15px"}>
           {userData.name} / {userData.email}
         </Box>
       </Box>

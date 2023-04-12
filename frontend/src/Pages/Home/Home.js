@@ -25,7 +25,8 @@ function Home() {
       p={0}
       m={0}
       style={{
-        height: "100vh",
+        minHeight: "100vh",
+        height: "auto",
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-start",

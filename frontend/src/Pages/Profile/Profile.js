@@ -48,14 +48,13 @@ function ProfilePage() {
     updateUser(userData.id, name, email, password)
       .then((response) => {
         console.log(response);
-        // login(response.data.email);
         setError("");
         window.location.replace("/");
       })
       .catch((error) => {
         console.log("Error al iniciar sesión");
         setError(
-          "Ha ocurrido un error al crear usuario, inténtalo de nuevo" + error
+          "An error occurred while updating the user data. Please try again." + error
         );
         // setLoading(false);
       });

@@ -25,7 +25,7 @@ export const JokeBox = (props) => {
   }, [joke]);
   return (
     <ReactCardFlip isFlipped={flip} flipDirection="horizontal">
-      <Card maxW="sm" h={"700px"}>
+       <Card maxW="sm" h={"500px"}>
         <CardBody>
           <Image
             boxSize="300px"
@@ -61,7 +61,7 @@ export const JokeBox = (props) => {
           </ButtonGroup>
         </CardFooter>
       </Card>
-      <Card maxW="sm" h={"700px"}>
+      <Card maxW="sm" h={"500px"}>
         <CardBody>
           <Image
             boxSize="300px"
