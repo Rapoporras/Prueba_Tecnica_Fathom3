@@ -22,8 +22,9 @@ DATABASE_URL="postgresql://user:password@localhost:5432/dbname"
 Asegúrese de reemplazar `user`, `password` y `dbname` con los valores apropiados para su base de datos.
 
 1. Ejecute el comando `npx prisma migrate dev` en la terminal para ejecutar las migraciones de la base de datos.
-2. Ejecute el comando `npm run dev` en la terminal para iniciar el servidor.
-3. Ahora la aplicación estará en funcionamiento en `http://localhost:4000`.
+2. Ejecute el comando `npm i --save-dev @types/node-fetch` en la terminal para actualizar los tipos de node-fetch.
+3. Ejecute el comando `npm run dev` en la terminal para iniciar el servidor.
+4. Ahora la aplicación estará en funcionamiento en `http://localhost:4000`.
 
 ## Frontend
 
